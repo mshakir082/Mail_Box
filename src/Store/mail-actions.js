@@ -157,7 +157,7 @@ import { mailActions } from '../Store/mail-slice';
 export const addMail = (mail, clearInput) => {
   return (dispatch) => {
     // Perform any necessary logic or API calls
-
+  
     // Dispatch the action to add mail
     dispatch(mailActions.add(mail));
 
@@ -170,7 +170,8 @@ export const addMail = (mail, clearInput) => {
 export const replaceMail = (mailData, unreadMessageCount) => {
   return (dispatch) => {
     // Perform any necessary logic or API calls
-
+    let unreadMessageCount = 0;
+    unreadMessageCount++;
     // Dispatch the action to replace mail
     dispatch(mailActions.replace({ mailData, unreadMessageCount }));
   };
