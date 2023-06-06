@@ -23,6 +23,12 @@ const mailSlice = createSlice({
      remove(state, action) {
       state.mailData = state.mailData.filter(mail => mail.id !== action.payload.id);
     },
+    updateMailStatus(state, action) {
+      const mailIndex = state.mailData.findIndex((mail) => mail.id === action.payload);
+      if (mailIndex !== -1) {
+        state.mailData[mailIndex].read = true;
+      }
+    },
   },
 });
 
