@@ -1,11 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './Header.module.css';
-
+import { authActions } from '../Store/auth-slice';
+import { showActions } from '../Store/show-slice';
 
 
 const Header = () => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const dispatch = useDispatch();
 
+  const authHandler = () => {
+    if (isLoggedIn) {
+      dispatch(authActions.logout());
+      dispatch(showActions.compose());
+    }
+  };
 
   return (
     <div className={classes.container}>

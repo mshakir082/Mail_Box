@@ -1,4 +1,4 @@
-import React, { Fragment,useState } from 'react';
+import React, { Fragment } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
@@ -9,8 +9,8 @@ import Home from './Pages/Home';
 
 function App() {
   
-  const isLoggedIn = useState(true);
-
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+console.log(isLoggedIn,'isLoggedIn')
   return (
     <Fragment>
       <Header />
