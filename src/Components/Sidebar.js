@@ -35,7 +35,7 @@ const Sidebar = ( ) => {
         className={state.received ? classes.received : ''}
       >
         <span>Inbox</span>
-        <span>{(mails.length > 0) ?mails.length : ''}</span>
+        <span>{(unreadMessageCount.length > 0) ?unreadMessageCount.length : ''}</span>
        
       </li>
       <li onClick={sentHandler} className={state.sent ? classes.sent : ''}>
